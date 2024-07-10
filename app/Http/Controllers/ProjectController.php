@@ -18,7 +18,9 @@ class ProjectController extends Controller
             "progetti" => $projects
         ];
 
-        return view("projects.index", $data);
+        //dalla cartella: /resources/view/
+        //prendi la vista: admin/projects/index.blade.php
+        return view("admin.projects.index", $data);
     }
 
     /**
@@ -46,7 +48,9 @@ class ProjectController extends Controller
             "progetto" => $project
         ];
 
-        return view("projects.show", $data);
+        //dalla cartella: /resources/view/
+        //prendi la vista: admin/projects/show.blade.php
+        return view("admin.projects.show", $data);
     }
 
     /**
