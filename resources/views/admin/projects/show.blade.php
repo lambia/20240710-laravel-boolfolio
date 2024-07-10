@@ -8,7 +8,7 @@
                 <h1 class="pb-4">{{ $progetto->name }}</h1>
                 <img src="{{ $progetto->img }}" class="w-100" alt="{{ $progetto->name }}">
                 <p class="card-text my-4">{{ $progetto->description }}</p>
-                <a href="{{ route("projects.index") }}" class="btn btn-primary">Torna alla lista progetti</a>
+                <a href="{{ route("admin.projects.index") }}" class="btn btn-primary">Torna alla lista progetti</a>
 
             </div>
         </div>

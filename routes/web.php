@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 // localhost:8000/projects ---> mostra l'index, per tutti gli utenti
-Route::resource("projects", ProjectController::class);
+// Route::resource("projects", ProjectController::class);
 
 Route::middleware(['auth'])
     ->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo
@@ -31,6 +31,11 @@ Route::middleware(['auth'])
         // - il percorso "/" diventa "admin/"
         // - il nome della rotta ->name("dashboard") diventa ->name("admin.dashboard")
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+        // ATTENZIONE !!
+        // localhost:8000/admin/projects ---> mostra l'index, per gli utenti autenticati
+        Route::resource("projects", ProjectController::class);
+
     });
 
 require __DIR__ . '/auth.php';
