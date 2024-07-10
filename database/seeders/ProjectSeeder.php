@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
             $newProject = new Project();
             $newProject->name = $faker->sentence(2);
             $newProject->description = $faker->sentence(22);
-            $newProject->img = "https://picsum.photos/id/" . rand(1, 500) . "/600/600";
+            $newProject->img = "https://picsum.photos/id/" . rand(1, 500) . "/800/200";
             $newProject->save();
         }
     }
