@@ -78,7 +78,7 @@ class ProjectController extends Controller
             "name" => "required",
             "img" => "required",
             "description" => "required",
-            "category_id" => "required|exists:categories,id",
+            "category_id" => "required|exists:categories,id", //v. https://laravel.com/docs/10.x/validation#rule-exists
         ]);
 
         $project->update($dati);
