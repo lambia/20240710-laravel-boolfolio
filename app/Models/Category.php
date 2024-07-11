@@ -13,4 +13,10 @@ class Category extends Model
         "name",
         "icon",
     ];
+
+    //Dalle Category recupera i Projects collegati
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

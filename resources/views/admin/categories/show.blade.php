@@ -9,8 +9,13 @@
                     <i class="{{ $categoria->icon }}"></i> {{ $categoria->name }}
                 </h1>
                 
-                
-                
+                <h2>Progetti collegati:</h2>
+                <ul>
+                    @foreach ($categoria->projects as $project)
+                        <li><a href="{{ route("admin.projects.show", $project) }}">{{ $project->name }}</a></li>
+                    @endforeach
+                </ul>
+
                 <a href="{{ route("admin.categories.index") }}" class="btn btn-primary">Torna alla lista categorie</a>
 
             </div>
