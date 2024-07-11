@@ -14,4 +14,10 @@ class Project extends Model
         "description",
         "img",
     ];
+
+    //Tutti i Project avranno un metodo che restituisce la categoria a cui appartengono
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
