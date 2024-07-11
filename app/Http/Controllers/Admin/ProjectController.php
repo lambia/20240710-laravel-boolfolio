@@ -46,16 +46,6 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        // $project->category_id <--- contiene l'id della categoria di questo Project
-
-        // basandomi sull'id, trovo la categoria corrispondente
-        $category = Category::find( $project->category_id );
-
-        //aggiungo al project una proprietà "category"
-        //ci copio dentro l'oggetto Category che ho trovato prima
-        //dalla vista potrò stampare $progetto->category->name
-        $project->categoriaPresaManualmente = $category;
-
         $data = [
             "progetto" => $project
         ];

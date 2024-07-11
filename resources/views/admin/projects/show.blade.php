@@ -12,9 +12,6 @@
                 {{-- Stampo semplicemente l'intero scritto nella colonna --}}
                 <p class="card-text my-4">ID Categoria: {{ $progetto->category_id }}</p>
 
-                {{-- Stampo la Category collegata, recuperata a mano dal Controller --}}
-                <p class="card-text my-4">Categoria: {{ $progetto->categoriaPresaManualmente->name }}</p>
-                
                 <a href="{{ route("admin.projects.index") }}" class="btn btn-primary">Torna alla lista progetti</a>
 
             </div>
