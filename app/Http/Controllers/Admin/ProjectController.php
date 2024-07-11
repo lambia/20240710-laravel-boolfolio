@@ -78,7 +78,7 @@ class ProjectController extends Controller
             "name" => "required",
             "img" => "required",
             "description" => "required",
-            "category_id" => "required",
+            "category_id" => "required|exists:categories,id",
         ]);
 
         $project->update($dati);
