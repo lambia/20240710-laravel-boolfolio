@@ -3,10 +3,22 @@
 @section('content')
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
+
             <div class="col-md-12">
-
                 <h1 class="pb-4">{{ $progetto->name }}</h1>
+                
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
 
+            <div class="col-md-12">
                 <form action="{{ route('admin.projects.update', $progetto) }}" method="POST">
                     @csrf
                     @method('put')
@@ -37,8 +49,8 @@
                     </div>
 
                 </form>
-
             </div>
+
         </div>
     </div>
 @endsection
