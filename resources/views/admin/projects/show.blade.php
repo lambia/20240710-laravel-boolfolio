@@ -18,6 +18,7 @@
                 </p>
                 
                 <a href="{{ route("admin.projects.index") }}" class="btn btn-primary">Torna alla lista progetti</a>
+                <a href="{{ route("admin.projects.edit", $progetto) }}" class="btn btn-danger">Modifica</a>
 
             </div>
         </div>

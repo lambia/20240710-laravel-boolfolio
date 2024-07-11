@@ -13,6 +13,7 @@ class Project extends Model
         "name",
         "description",
         "img",
+        "category_id",
     ];
 
     //Tutti i Project avranno un metodo che restituisce la categoria a cui appartengono

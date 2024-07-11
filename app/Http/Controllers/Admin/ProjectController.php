@@ -60,7 +60,13 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        $data = [
+            "progetto" => $project
+        ];
+
+        //dalla cartella: /resources/view/
+        //prendi la vista: admin/projects/edit.blade.php
+        return view("admin.projects.edit", $data);
     }
 
     /**
@@ -68,7 +74,16 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $dati = $request->validate([
+            "name" => "required",
+            "img" => "required",
+            "description" => "required",
+            "category_id" => "required",
+        ]);
+
+        $project->update($dati);
+        
+        return redirect()->route("admin.projects.show", $project);
     }
 
     /**
