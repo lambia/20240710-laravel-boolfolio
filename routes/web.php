@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,9 @@ Route::middleware(['auth'])
 
         // ATTENZIONE !!
         // localhost:8000/admin/projects ---> mostra l'index, per gli utenti autenticati
-        Route::resource("projects", ProjectController::class);
+        Route::resource("/projects", ProjectController::class);
+
+        Route::resource("/categories", CategoryController::class);
 
     });
 
